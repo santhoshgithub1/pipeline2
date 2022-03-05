@@ -1,12 +1,13 @@
 pipeline {
 	agent any
 	stages {
-	stage ('running build and test parallely')
+		stage ('running build and test parallely'){
 	parallel {
 	stage ('build stage'){ 
 	steps sh 'echo "this is build stage"'
 	stage ('test stage'){
 	steps sh 'echo "this is test stage"'
+	}
 	}
 	}
 	}
